@@ -71,5 +71,19 @@ describe('CafeService', () => {
 
     });
 
+    it('create should through a business error', async () => {
+        const cafe: CafeEntity = {
+        id: 0,
+        name: faker.company.name(),
+        description: faker.lorem.sentence(),
+        price: -10,
+        tiendas: []
+      }
+
+      await expect(() => service.create(cafe)).rejects.toHaveProperty("message", "The price is not a positive number")
+      
+
+    });
+
   });
 
