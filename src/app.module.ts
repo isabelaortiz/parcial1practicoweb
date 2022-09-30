@@ -6,6 +6,7 @@ import { CafeEntity } from './cafe/cafe.entity';
 import { CafeModule } from './cafe/cafe.module';
 import { TiendaEntity } from './tienda/tienda.entity';
 import { TiendaModule } from './tienda/tienda.module';
+import { TiendaCafeModule } from './tienda-cafe/tienda-cafe.module';
 
 @Module({
   imports: [CafeModule, TiendaModule,
@@ -21,6 +22,7 @@ import { TiendaModule } from './tienda/tienda.module';
       synchronize: true,
       keepConnectionAlive: true
     }),
+    TiendaCafeModule,
   ],
  
   controllers: [AppController],
